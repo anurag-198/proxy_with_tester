@@ -1,0 +1,40 @@
+How to test the proxy
+
+First build the files with make 
+1. make
+2. we will get a binary file name proxy.
+3. run it as ./proxy <port no>
+4. in other terminal test the proxy as
+
+telnet localhost <port no>
+
+which gives output as
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+
+Type this (connect to any address on network without proxy)
+
+GET http://www.iiita.ac.in/ HTTP/1.0
+
+gives
+
+HTTP/1.1 200 OK
+Date: Sun, 11 Oct 2015 13:18:07 GMT
+Server: Apache/2.2.15 (CentOS)
+X-Powered-By: PHP/5.3.3
+Connection: close
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE html5>
+
+<some ---- html contents --------------- >
+
+
+How to modify your Makefile
+
+1. if you dont want to check for warnings then you should not use CFLAGS
+2. use build to get run the part that you want to run
+3. clean is for removing .o files
+
+comments are present in the code for better understanding of the code 
